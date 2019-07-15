@@ -1,0 +1,46 @@
+{
+    "name": "kudinovfedor/sms-club-json",
+    "description": "SMS CLUB API JSON",
+    "type": "library",
+    "keywords": [
+        "composer",
+        "package",
+        "library",
+        "sms",
+        "sms club",
+        "sms api",
+        "sms JSON"
+    ],
+    "homepage": "https://joompress.biz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kudinov Fedor",
+            "email": "admin@joompress.biz",
+            "homepage": "https://joompress.biz/about-me/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "admin@joompress.biz",
+        "issues": "https://github.com/kudinovfedor/sms-club-json/issues",
+        "source": "https://github.com/kudinovfedor/sms-club-json"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KudinovFedor\\SmsClubJSON\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
