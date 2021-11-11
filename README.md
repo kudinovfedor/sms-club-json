@@ -85,7 +85,7 @@ return
 
 #### Check on errors
 ```php
-if ($manager->hasErrors) {
+if ($manager->hasErrors()) {
     $response = $manager->getErrors();
 }
 ```
