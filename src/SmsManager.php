@@ -301,7 +301,7 @@ class SmsManager extends Manager
      *
      * @return array
      */
-    public function gerErrors(): array
+    public function getErrors(): array
     {
         return $this->errors;
     }
