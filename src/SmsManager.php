@@ -194,7 +194,7 @@ class SmsManager extends Manager
         }
 
         foreach ($requiredProperties as $property) {
-            if (empty($this[$property])) {
+            if (empty($this->$property)) {
                 $this->errors[] = "Property: {$property} is not set!";
                 $this->hasError = true;
 
