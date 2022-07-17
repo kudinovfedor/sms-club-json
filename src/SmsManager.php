@@ -66,19 +66,6 @@ class SmsManager extends Manager
     public $integrationId;
 
     /**
-     * Array of statuses
-     *
-     * @var array
-     */
-    private $statuses = [
-        'ENROUTE' => 'Message sent.',
-        'DELIVRD' => 'Message delivered.',
-        'EXPIRED' => 'Life expired, message not delivered.',
-        'UNDELIV' => 'Unable to deliver message.',
-        'REJECTD' => 'The message was rejected by system (black list or other filters).',
-    ];
-
-    /**
      * Errors
      *
      * @var array
@@ -101,11 +88,11 @@ class SmsManager extends Manager
     {
         if (isset($params['token'])) {
             $this->token = $this->setToken($params['token']);
-        };
+        }
 
         if (isset($params['from'])) {
             $this->from = $this->setFrom($params['from']);
-        };
+        }
     }
 
     /**
@@ -142,8 +129,8 @@ class SmsManager extends Manager
         curl_setopt($ch, CURLOPT_URL, self::API_URL . $method);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);
 
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -212,9 +199,7 @@ class SmsManager extends Manager
             $params['integration_id'] = $this->integrationId;
         }
 
-        $response = $this->request('send', $params);
-
-        return $response;
+        return $this->request('send', $params);
     }
 
     /**
